@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		CC78E7FD249AE1D100EAE1B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */; };
 		CC78E7FF249AE1D100EAE1B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */; };
-		CC78E801249AE1D100EAE1B3 /* MeditationTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E800249AE1D100EAE1B3 /* MeditationTimerView.swift */; };
 		CC78E803249AE1D600EAE1B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC78E802249AE1D600EAE1B3 /* Assets.xcassets */; };
 		CC78E806249AE1D600EAE1B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC78E805249AE1D600EAE1B3 /* Preview Assets.xcassets */; };
 		CC78E809249AE1D600EAE1B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC78E807249AE1D600EAE1B3 /* LaunchScreen.storyboard */; };
 		CC78E811249AE23300EAE1B3 /* FormatTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E810249AE23300EAE1B3 /* FormatTimer.swift */; };
 		CC78E813249AE28300EAE1B3 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E812249AE28300EAE1B3 /* TimerManager.swift */; };
+		CC78E817249C223300EAE1B3 /* MeditationTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */; };
+		CC78E819249D864600EAE1B3 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC78E818249D864600EAE1B3 /* applause.mp3 */; };
+		CC78E81B249D86A200EAE1B3 /* PlaySounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC78E7F9249AE1D100EAE1B3 /* Meditation Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meditation Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC78E800249AE1D100EAE1B3 /* MeditationTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationTimerView.swift; sourceTree = "<group>"; };
 		CC78E802249AE1D600EAE1B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC78E805249AE1D600EAE1B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC78E808249AE1D600EAE1B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC78E80A249AE1D600EAE1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC78E810249AE23300EAE1B3 /* FormatTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatTimer.swift; sourceTree = "<group>"; };
 		CC78E812249AE28300EAE1B3 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationTimerView.swift; sourceTree = "<group>"; };
+		CC78E818249D864600EAE1B3 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
+		CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +64,11 @@
 		CC78E7FB249AE1D100EAE1B3 /* Meditation Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				CC78E818249D864600EAE1B3 /* applause.mp3 */,
+				CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */,
 				CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */,
 				CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */,
-				CC78E800249AE1D100EAE1B3 /* MeditationTimerView.swift */,
+				CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */,
 				CC78E812249AE28300EAE1B3 /* TimerManager.swift */,
 				CC78E810249AE23300EAE1B3 /* FormatTimer.swift */,
 				CC78E802249AE1D600EAE1B3 /* Assets.xcassets */,
@@ -140,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC78E809249AE1D600EAE1B3 /* LaunchScreen.storyboard in Resources */,
+				CC78E819249D864600EAE1B3 /* applause.mp3 in Resources */,
 				CC78E806249AE1D600EAE1B3 /* Preview Assets.xcassets in Resources */,
 				CC78E803249AE1D600EAE1B3 /* Assets.xcassets in Resources */,
 			);
@@ -153,10 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC78E7FD249AE1D100EAE1B3 /* AppDelegate.swift in Sources */,
+				CC78E81B249D86A200EAE1B3 /* PlaySounds.swift in Sources */,
+				CC78E817249C223300EAE1B3 /* MeditationTimerView.swift in Sources */,
 				CC78E813249AE28300EAE1B3 /* TimerManager.swift in Sources */,
 				CC78E7FF249AE1D100EAE1B3 /* SceneDelegate.swift in Sources */,
 				CC78E811249AE23300EAE1B3 /* FormatTimer.swift in Sources */,
-				CC78E801249AE1D100EAE1B3 /* MeditationTimerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

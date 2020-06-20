@@ -11,41 +11,85 @@ import SwiftUI
 struct MeditationTimerView: View {
     @ObservedObject var timerManager = TimerManager()
     
+    // Switches Play button with Pause Button
+    @State var isPlaying: Bool = false
+    
+    // MARK: Play/Pause Size constants
+    private let pausePlayButtonSize: CGFloat = 80
+    
     var body: some View {
-        VStack {
-            Text(convertSecondsToMinutesAndSeconds(seconds: timerManager.timeRemaining))
-                .font(.custom("Avenir", size: 40))
-                .padding(.top, 200)
-                .padding(.bottom, 100)
-            HStack {
-                Button(action: {self.timerManager.start(from: 5*60)}) {
-                    TimerButton(label: "5 Minutes", buttonColor: .blue)
+        TabView {
+            // MARK: Meditation Timer View
+            VStack {
+                Text(convertSecondsToMinutesAndSeconds(seconds: timerManager.timeRemaining))
+                    .font(.custom("Avenir", size: 50))
+                    .padding(.top, 200)
+                    .padding(.bottom, 10)
+                // TODO: - Add Animation on switches between pause and play.
+                if !self.isPlaying {
+                    Button(action: {
+                        self.timerManager.fireTimer()
+                        self.isPlaying = true
+                    },
+                           label: {
+                            Image(systemName: "play.circle.fill").resizable().frame(width: pausePlayButtonSize, height: pausePlayButtonSize, alignment: .center)
+                    })
+                        .padding(.bottom)
+                } else {
+                    Button(action: {
+                        self.timerManager.pause()
+                        self.isPlaying = false
+                    },
+                           label: {
+                            Image(systemName: "pause.circle.fill").resizable().frame(width: pausePlayButtonSize, height: pausePlayButtonSize, alignment: .center)
+                    })
+                        .padding(.bottom)
                 }
-                Button(action: {self.timerManager.start(from: 10*60)}) {
-                    TimerButton(label: "10 Minutes", buttonColor: .blue)
+                HStack {
+                    Button(action: {
+                        self.timerManager.setMeditationTime(from: 5*60)
+                        // Sound here was for testing
+                        playSound(sound: "applause", type: "mp3")
+                    }) {
+                        TimerButton(label: "5 Minutes", buttonColor: .blue)
+                    }
+                    
+                    Button(action: {self.timerManager.setMeditationTime(from: 10*60)}) {
+                        TimerButton(label: "10 Minutes", buttonColor: .blue)
+                    }
                 }
-            }
-            .padding(.bottom)
-            HStack {
-                Button(action: {self.timerManager.start(from: 15*60)}) {
-                    TimerButton(label: "15 Minutes", buttonColor: .blue)
+                .padding(.bottom)
+                HStack {
+                    Button(action: {self.timerManager.setMeditationTime(from: 15*60)}) {
+                        TimerButton(label: "15 Minutes", buttonColor: .blue)
+                    }
+                    Button(action: {self.timerManager.setMeditationTime(from: 20*60)}) {
+                        TimerButton(label: "20 Minutes", buttonColor: .blue)
+                    }
                 }
-                Button(action: {self.timerManager.start(from: 20*60)}) {
-                    TimerButton(label: "20 Minutes", buttonColor: .blue)
-                }
+                .padding(.bottom)
+                Spacer()
             }
-            .padding(.bottom)
-            Button(action: { self.timerManager.pause() }) {
-                TimerButton(label: "Pause", buttonColor: .yellow)
+             .tabItem {
+                Image(systemName: "moon")
+                Text("Meditate")
+              }
+            // MARK: - History View
+            VStack {
+                Text("Total Time Meditated: \(timerManager.totalMeditationTime)")
+                Text("Welcome to the History View")
             }
-            .padding(.bottom)
-            Button(action: { self.timerManager.reset() }) {
-                TimerButton(label: "Reset", buttonColor: .red)
+                .tabItem {
+                    Image(systemName: "clock")
+                    Text("History")
             }
-            Spacer()
+            // MARK: - Settings View
+            Text("Welcome to the Settings View")
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+            }
         }
-        
-        
     }
 }
 
