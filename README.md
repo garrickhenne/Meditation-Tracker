@@ -7,3 +7,7 @@ Notable features:
   - Records total amount of time meditated throughout your career
 
 Still being constructed!
+
+<img src="Meditation%20Tracker/images/ss1.png" width="300" >
+
+
