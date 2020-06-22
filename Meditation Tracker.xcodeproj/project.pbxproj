@@ -15,8 +15,9 @@
 		CC78E811249AE23300EAE1B3 /* FormatTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E810249AE23300EAE1B3 /* FormatTimer.swift */; };
 		CC78E813249AE28300EAE1B3 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E812249AE28300EAE1B3 /* TimerManager.swift */; };
 		CC78E817249C223300EAE1B3 /* MeditationTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */; };
-		CC78E819249D864600EAE1B3 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC78E818249D864600EAE1B3 /* applause.mp3 */; };
 		CC78E81B249D86A200EAE1B3 /* PlaySounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */; };
+		CC78E81F249F03CE00EAE1B3 /* future-gongsound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC78E81E249F03CE00EAE1B3 /* future-gongsound1.wav */; };
+		CC78E821249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC78E820249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,9 @@
 		CC78E810249AE23300EAE1B3 /* FormatTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatTimer.swift; sourceTree = "<group>"; };
 		CC78E812249AE28300EAE1B3 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationTimerView.swift; sourceTree = "<group>"; };
-		CC78E818249D864600EAE1B3 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 		CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySounds.swift; sourceTree = "<group>"; };
+		CC78E81E249F03CE00EAE1B3 /* future-gongsound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "future-gongsound1.wav"; sourceTree = "<group>"; };
+		CC78E820249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LowBowlPadBeatMidVel4.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 		CC78E7FB249AE1D100EAE1B3 /* Meditation Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				CC78E818249D864600EAE1B3 /* applause.mp3 */,
+				CC78E820249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 */,
+				CC78E81E249F03CE00EAE1B3 /* future-gongsound1.wav */,
 				CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */,
 				CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */,
 				CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */,
@@ -146,8 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC78E809249AE1D600EAE1B3 /* LaunchScreen.storyboard in Resources */,
-				CC78E819249D864600EAE1B3 /* applause.mp3 in Resources */,
+				CC78E81F249F03CE00EAE1B3 /* future-gongsound1.wav in Resources */,
 				CC78E806249AE1D600EAE1B3 /* Preview Assets.xcassets in Resources */,
+				CC78E821249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 in Resources */,
 				CC78E803249AE1D600EAE1B3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

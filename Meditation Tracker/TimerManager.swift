@@ -22,6 +22,7 @@ class TimerManager: ObservableObject {
                 self.timeRemaining -= 1
                 self.totalMeditationTime += 1
             } else {
+                playSound(sound: "future-gongsound1", type: "wav")
                 self.reset()
             }
         }

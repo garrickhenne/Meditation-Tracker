@@ -25,6 +25,7 @@ struct MeditationTimerView: View {
                     .font(.custom("Avenir", size: 50))
                     .padding(.top, 200)
                     .padding(.bottom, 10)
+                    
                 // TODO: - Add Animation on switches between pause and play.
                 if !self.isPlaying {
                     Button(action: {
@@ -35,6 +36,7 @@ struct MeditationTimerView: View {
                             Image(systemName: "play.circle.fill").resizable().frame(width: pausePlayButtonSize, height: pausePlayButtonSize, alignment: .center)
                     })
                         .padding(.bottom)
+                    //.shadow(radius: 5)
                 } else {
                     Button(action: {
                         self.timerManager.pause()
@@ -49,7 +51,7 @@ struct MeditationTimerView: View {
                     Button(action: {
                         self.timerManager.setMeditationTime(from: 5*60)
                         // Sound here was for testing
-                        playSound(sound: "applause", type: "mp3")
+                        playSound(sound: "LowBowlPadBeatMidVel4", type: "mp3")
                     }) {
                         TimerButton(label: "5 Minutes", buttonColor: .blue)
                     }
@@ -73,7 +75,7 @@ struct MeditationTimerView: View {
              .tabItem {
                 Image(systemName: "moon")
                 Text("Meditate")
-              }
+            }
             // MARK: - History View
             VStack {
                 Text("Total Time Meditated: \(timerManager.totalMeditationTime)")
@@ -110,5 +112,6 @@ struct TimerButton: View {
             .foregroundColor(.white)
             .background(buttonColor)
             .cornerRadius(10)
+            //.shadow(radius: 5)
     }
 }
