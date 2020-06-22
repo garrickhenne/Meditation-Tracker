@@ -8,6 +8,6 @@ Notable features:
 
 Still being constructed!
 
-<img src="Meditation%20Tracker/images/ss1.png" width="300" >
+<img src="Meditation%20Tracker/images/ss2.png" width="300" >
 
 
