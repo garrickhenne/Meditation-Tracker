@@ -8,4 +8,6 @@ Notable features:
 
 Still being constructed!
 
-![Screenshot of app] (Meditation%20Tracker/images/ss1.png)
+<img src="Meditation%20Tracker/images/ss1.png" width="300" >
+
+
