@@ -7,5 +7,3 @@ Notable features:
   - Records total amount of time meditated throughout your career
 
 Still being constructed!
-
-![Screenshot of home page of app] (https://imgur.com/a/KiqhxeI)
