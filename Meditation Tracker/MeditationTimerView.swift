@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MeditationTimerView: View {
-    @ObservedObject var timerManager = TimerManager()
+    @EnvironmentObject var timerManager: TimerManager
     
     // Switches Play button with Pause Button
     @State var isPlaying: Bool = false
@@ -88,19 +88,17 @@ struct MeditationTimerView: View {
                 Text("Meditate")
             }
             // MARK: - History View
-            VStack {
-                Text("Total Time Meditated: \(timerManager.totalMeditationTime)")
-                Text("Welcome to the History View")
-            }
-                .tabItem {
-                    Image(systemName: "clock")
-                    Text("History")
+            HistoryTabView()
+            .edgesIgnoringSafeArea(.all)
+            .tabItem {
+                Image(systemName: "clock")
+                Text("History")
             }
             // MARK: - Settings View
-            Text("Welcome to the Settings View")
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
+            SettingsView()
+            .tabItem {
+                Image(systemName: "gear")
+                Text("Settings")
             }
         }
     .accentColor(Color("paletteOrange"))
@@ -113,7 +111,7 @@ struct MeditationTimerView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MeditationTimerView()
+        MeditationTimerView().environmentObject(TimerManager())
     }
 }
 
@@ -128,6 +126,6 @@ struct TimerButton: View {
             .foregroundColor(Color("paletteBlack"))
             .background(buttonColor)
             .cornerRadius(10)
-            //.shadow(radius: 5)
+            .shadow(radius: 10)
     }
 }
