@@ -18,34 +18,40 @@ struct BarChartView: View {
         [50, 30, 70]
     ]
     
+    init() {
+        let pickerControl = UISegmentedControl.appearance()
+        pickerControl.selectedSegmentTintColor = #colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1)
+        pickerControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1)], for: .selected)
+        pickerControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1)], for: .normal)
+    }
+    
     var body: some View {
         ZStack {
             Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)).edgesIgnoringSafeArea(.all)
+            
             VStack {
-                Text("Mindful History")
-                    .font(.system(size: 34))
-                    .fontWeight(.heavy)
-                    .foregroundColor(Color(#colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1)))
-                Picker(selection: $pickerSelectedItem, label: Text("")) {
-                    Text("Weekday").tag(0)
-                    Text("Afternoon").tag(1)
-                    Text("Evening").tag(2)
+                LeftTrailingTextView(with: "Time Spent: ")
+                LeftTrailingTextView(with: "Average Time: ")
+                Picker(selection: self.$pickerSelectedItem, label: Text("")) {
+                    Text("Weekly").tag(0)
+                    Text("Monthly").tag(1)
+                    Text("Yearly").tag(2)
                 }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.horizontal, 24)
                 
-                
-                
                 HStack (spacing: 16) {
-                    BarView(value: dataPoints[pickerSelectedItem][0])
-                    BarView(value: dataPoints[pickerSelectedItem][1])
-                    BarView(value: dataPoints[pickerSelectedItem][2])
+                    BarView(value: self.dataPoints[self.pickerSelectedItem][0])
+                    BarView(value: self.dataPoints[self.pickerSelectedItem][1])
+                    BarView(value: self.dataPoints[self.pickerSelectedItem][2])
                 }
-                    .padding(.top, 24)
+                    .padding()
                     .animation(.default)
+                Spacer()
             }
-            
+            .padding(.top, 100)
         }
+        
     }
 }
 
@@ -75,5 +81,21 @@ struct BarView: View {
 struct BarChartView_Previews: PreviewProvider {
     static var previews: some View {
         BarChartView()
+    }
+}
+
+struct LeftTrailingTextView: View {
+    
+    var with: String
+    
+    var body: some View {
+        HStack {
+            Text(with)
+                .font(Font.system(size: 20))
+                .foregroundColor(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1)))
+                .fontWeight(.heavy)
+                .padding()
+            Spacer()
+        }
     }
 }

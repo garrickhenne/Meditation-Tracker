@@ -10,17 +10,55 @@ import SwiftUI
 
 struct SettingsView: View {
     
+
+    init() {
+        UITableView.appearance().backgroundColor = #colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)
+        UITableViewCell.appearance().backgroundColor = #colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)
+        UITableView.appearance().tableFooterView = UIView()
+    }
+    
+    @State var vibrateOnly: Bool = false
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Text("Hello World")
+        NavigationView {
+            List {
+                ToggleRow(vibrateOnly: $vibrateOnly)
+                NavigationLink(destination: SoundsList(), label: {
+                    HStack {
+                        Text("Sounds")
+                            .font(Font.system(size: 20))
+                            .foregroundColor(Color("paletteCream"))
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                    }
+                    
+                })
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .background(Color("paletteBlack"))
         }
-        .edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ToggleRow: View {
         
+        @Binding var vibrateOnly: Bool
+        
+        var body: some View {
+            Toggle(isOn: self.$vibrateOnly, label: {
+                Text("Vibrate Only")
+                    .font(Font.system(size: 20))
+                    .foregroundColor(Color("paletteCream"))
+                
+            })
+        }
+    }
+    
+    struct SoundsList: View {
+        
+        var body: some View {
+            List {
+                Text("hello")
+            }
+        }
     }
     
     

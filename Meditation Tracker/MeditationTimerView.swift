@@ -14,6 +14,8 @@ struct MeditationTimerView: View {
     // Switches Play button with Pause Button
     @State var isPlaying: Bool = false
     
+    @State var settingsInView: Bool = false
+    
     // MARK: Play/Pause Size constants
     private let pausePlayButtonSize: CGFloat = 80
     
@@ -21,9 +23,25 @@ struct MeditationTimerView: View {
         TabView {
             // MARK: Meditation Timer View
             ZStack {
+                
                 Rectangle()
                     .fill(Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)))
                     .edgesIgnoringSafeArea(.all)
+                VStack {
+                    HStack {
+                        Button(action: {
+                            self.settingsInView = true
+                        }) {
+                            Image(systemName: "gear")
+                            .resizable().frame(width: 40, height: 40)
+                                .padding([.leading, .top])
+                        }.sheet(isPresented: self.$settingsInView) {
+                            SheetView(settingsInView: self.$settingsInView)
+                        }
+                        Spacer()
+                    }
+                    Spacer()
+                }
                 VStack {
                     Text(convertSecondsToMinutesAndSeconds(seconds: timerManager.timeRemaining))
                         .font(.custom("Avenir", size: 50))
@@ -88,17 +106,11 @@ struct MeditationTimerView: View {
                 Text("Meditate")
             }
             // MARK: - History View
-            HistoryTabView()
-            .edgesIgnoringSafeArea(.all)
+            //HistoryTabView()
+            BarChartView()
             .tabItem {
                 Image(systemName: "clock")
                 Text("History")
-            }
-            // MARK: - Settings View
-            SettingsView()
-            .tabItem {
-                Image(systemName: "gear")
-                Text("Settings")
             }
         }
         .accentColor(Color("paletteOrange"))
@@ -108,6 +120,41 @@ struct MeditationTimerView: View {
         }
     }
 }
+
+struct SheetView: View {
+    
+    @Binding var settingsInView: Bool
+    
+    var body: some View {
+        
+        ZStack {
+            Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)).edgesIgnoringSafeArea(.all)
+            VStack {
+                HStack {
+                    Text("Settings").font(.largeTitle).fontWeight(.heavy).foregroundColor(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding([.top, .leading])
+                    Spacer()
+                    Button(action: {
+                        self.settingsInView = false
+                    }) {
+                        Text("Done").bold().foregroundColor(Color(#colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1))).padding([.top, .trailing])
+                    }
+                }
+                Divider().background(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding(.bottom)
+                EmptyView().padding()
+                Spacer()
+            }
+            
+        }
+        
+    }
+}
+
+struct SoundsList: View {
+    var body: some View {
+        Text("hello")
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
