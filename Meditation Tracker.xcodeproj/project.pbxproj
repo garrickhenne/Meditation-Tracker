@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC1B690524A0521A00509C5C /* images in Resources */ = {isa = PBXBuildFile; fileRef = CC1B690424A0521A00509C5C /* images */; };
+		CC643AE524A2DE4200336B53 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC643AE424A2DE4200336B53 /* BarChartView.swift */; };
 		CC70E7C824A14EAB0021245D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70E7C724A14EAB0021245D /* SettingsView.swift */; };
 		CC70E7CA24A280380021245D /* HistoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70E7C924A280380021245D /* HistoryTabView.swift */; };
 		CC78E7FD249AE1D100EAE1B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		CC1B690424A0521A00509C5C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		CC643AE424A2DE4200336B53 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		CC70E7C724A14EAB0021245D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CC70E7C924A280380021245D /* HistoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabView.swift; sourceTree = "<group>"; };
 		CC78E7F9249AE1D100EAE1B3 /* Meditation Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meditation Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 				CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */,
 				CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */,
 				CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */,
+				CC643AE424A2DE4200336B53 /* BarChartView.swift */,
 				CC70E7C924A280380021245D /* HistoryTabView.swift */,
 				CC70E7C724A14EAB0021245D /* SettingsView.swift */,
 				CC78E812249AE28300EAE1B3 /* TimerManager.swift */,
@@ -178,6 +181,7 @@
 				CC78E81B249D86A200EAE1B3 /* PlaySounds.swift in Sources */,
 				CC70E7CA24A280380021245D /* HistoryTabView.swift in Sources */,
 				CC78E817249C223300EAE1B3 /* MeditationTimerView.swift in Sources */,
+				CC643AE524A2DE4200336B53 /* BarChartView.swift in Sources */,
 				CC78E813249AE28300EAE1B3 /* TimerManager.swift in Sources */,
 				CC78E7FF249AE1D100EAE1B3 /* SceneDelegate.swift in Sources */,
 				CC78E811249AE23300EAE1B3 /* FormatTimer.swift in Sources */,

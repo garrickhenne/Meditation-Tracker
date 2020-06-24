@@ -16,6 +16,8 @@ struct HistoryTabView: View {
             VStack {
                 Text("Total Time Meditated: \(self.timeRemaining.totalMeditationTime)")
                 .foregroundColor(Color("paletteCream"))
+                
+                //BarChartView()
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
             .background(Color("paletteBlack"))

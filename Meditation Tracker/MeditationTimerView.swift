@@ -22,12 +22,12 @@ struct MeditationTimerView: View {
             // MARK: Meditation Timer View
             ZStack {
                 Rectangle()
-                    .fill(Color("paletteBlack"))
+                    .fill(Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)))
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Text(convertSecondsToMinutesAndSeconds(seconds: timerManager.timeRemaining))
                         .font(.custom("Avenir", size: 50))
-                        .foregroundColor(Color("paletteOrange"))
+                        .foregroundColor(Color(#colorLiteral(red: 0.9325308204, green: 0.423905015, blue: 0.3029931784, alpha: 1)))
                         .padding(.top, 200)
                         .padding(.bottom, 10)
                     HStack(spacing: 20) {
@@ -63,20 +63,20 @@ struct MeditationTimerView: View {
                             // Sound here was for testing
                             playSound(sound: "LowBowlPadBeatMidVel4", type: "mp3")
                         }) {
-                            TimerButton(label: "5 Minutes", buttonColor: Color("paletteOrange"))
+                            TimerButton(label: "5 Minutes")
                         }
                         
                         Button(action: {self.timerManager.setMeditationTime(from: 10*60)}) {
-                            TimerButton(label: "10 Minutes", buttonColor: Color("paletteOrange"))
+                            TimerButton(label: "10 Minutes")
                         }
                     }
                     .padding(.bottom)
                     HStack {
                         Button(action: {self.timerManager.setMeditationTime(from: 15*60)}) {
-                            TimerButton(label: "15 Minutes", buttonColor: Color("paletteOrange"))
+                            TimerButton(label: "15 Minutes")
                         }
                         Button(action: {self.timerManager.setMeditationTime(from: 20*60)}) {
-                            TimerButton(label: "20 Minutes", buttonColor: Color("paletteOrange"))
+                            TimerButton(label: "20 Minutes")
                         }
                     }
                     .padding(.bottom)
@@ -101,10 +101,10 @@ struct MeditationTimerView: View {
                 Text("Settings")
             }
         }
-    .accentColor(Color("paletteOrange"))
+        .accentColor(Color("paletteOrange"))
         .onAppear() {
             UITabBar.appearance().isTranslucent = false
-            UITabBar.appearance().barTintColor = UIColor(red: 41 / 255, green: 50 / 255, blue: 65 / 255, alpha: 1.0)
+            UITabBar.appearance().barTintColor = UIColor(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1))
         }
     }
 }
@@ -118,14 +118,13 @@ struct ContentView_Previews: PreviewProvider {
 struct TimerButton: View {
     
     let label: String
-    let buttonColor: Color
     
     var body: some View {
         Text(label)
             .padding(20)
-            .foregroundColor(Color("paletteBlack"))
-            .background(buttonColor)
+            .foregroundColor(Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)))
+            .background(Color(#colorLiteral(red: 0.9325308204, green: 0.423905015, blue: 0.3029931784, alpha: 1)))
             .cornerRadius(10)
-            .shadow(radius: 10)
+            //.shadow(radius: 10)
     }
 }
