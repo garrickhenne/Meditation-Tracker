@@ -16,6 +16,8 @@ struct MeditationTimerView: View {
     
     @State var settingsInView: Bool = false
     
+    @State var selectedSound: String = "LowBowlPadBeatMidVel4"
+    
     // MARK: Play/Pause Size constants
     private let pausePlayButtonSize: CGFloat = 80
     
@@ -36,7 +38,7 @@ struct MeditationTimerView: View {
                             .resizable().frame(width: 40, height: 40)
                                 .padding([.leading, .top])
                         }.sheet(isPresented: self.$settingsInView) {
-                            SheetView(settingsInView: self.$settingsInView)
+                            SheetView(settingsInView: self.$settingsInView, soundToChange: self.$selectedSound)
                         }
                         Spacer()
                     }
@@ -52,7 +54,7 @@ struct MeditationTimerView: View {
                         // TODO: - Add Animation on switches between pause and play.
                         if !self.isPlaying {
                             Button(action: {
-                                self.timerManager.fireTimer()
+                                self.timerManager.fireTimer(withSound: self.selectedSound)
                                 self.isPlaying = true
                             },
                                    label: {
@@ -79,7 +81,7 @@ struct MeditationTimerView: View {
                         Button(action: {
                             self.timerManager.setMeditationTime(from: 5*60)
                             // Sound here was for testing
-                            playSound(sound: "LowBowlPadBeatMidVel4", type: "mp3")
+                            playSound(sound: self.selectedSound)
                         }) {
                             TimerButton(label: "5 Minutes")
                         }
@@ -122,38 +124,54 @@ struct MeditationTimerView: View {
 }
 
 struct SheetView: View {
-    
+        
     @Binding var settingsInView: Bool
+    @State var isInSoundsList: Bool = false
+    @Binding var soundToChange: String
+    
+    let sounds: [TimerSound] = [
+        TimerSound(easyName: "Short Gong", fileName: "LowBowlPadBeatMidVel4"),
+        TimerSound(easyName: "Singing Bowl", fileName: "crystalWandOnSingingBowl"),
+        TimerSound(easyName: "Prayer Bowl Tap", fileName: "Prayer Bowls3_Shriek_2011"),
+        TimerSound(easyName: "Prayer Bowl Sustained", fileName: "Prayer Bowls4_Shriek_2011")
+    ]
+    
     
     var body: some View {
         
-        ZStack {
-            Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)).edgesIgnoringSafeArea(.all)
-            VStack {
-                HStack {
-                    Text("Settings").font(.largeTitle).fontWeight(.heavy).foregroundColor(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding([.top, .leading])
-                    Spacer()
-                    Button(action: {
-                        self.settingsInView = false
-                    }) {
-                        Text("Done").bold().foregroundColor(Color(#colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1))).padding([.top, .trailing])
+        NavigationView {
+            ZStack {
+                Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)).edgesIgnoringSafeArea(.all)
+                VStack {
+                    HStack {
+                        Button(action: { self.settingsInView = false }, label: { Text("Done").bold().foregroundColor(Color(#colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1))).padding([.top, .leading])})
+                        Spacer()
+                        Text("Settings").font(.system(size: 25)).fontWeight(.bold).foregroundColor(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding(.top)
+                        Spacer()
+                        Button(action: { self.settingsInView = false }, label: { Text("Cancel").bold().foregroundColor(Color(#colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1))).padding([.top, .trailing]) })
                     }
+                    Divider().background(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding(.bottom)
+                    EmptyView().padding()
+                    // TODO: Add form with picker inside.
+                    Form {
+                        Picker("Sounds" ,selection: self.$soundToChange) {
+                            ForEach(sounds, id: \.fileName) { sound in
+                                Text(sound.easyName)
+                            }
+                        }
+                    }
+                    .onAppear {
+                        UITableView.appearance().backgroundColor = #colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)
+                        
+                    }
+                    Spacer()
                 }
-                Divider().background(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding(.bottom)
-                EmptyView().padding()
-                Spacer()
             }
-            
+            .navigationBarTitle("").navigationBarHidden(true)
         }
-        
     }
 }
 
-struct SoundsList: View {
-    var body: some View {
-        Text("hello")
-    }
-}
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -172,6 +190,5 @@ struct TimerButton: View {
             .foregroundColor(Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)))
             .background(Color(#colorLiteral(red: 0.9325308204, green: 0.423905015, blue: 0.3029931784, alpha: 1)))
             .cornerRadius(10)
-            //.shadow(radius: 10)
     }
 }

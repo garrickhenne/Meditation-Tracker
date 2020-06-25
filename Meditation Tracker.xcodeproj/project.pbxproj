@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CC1B690524A0521A00509C5C /* images in Resources */ = {isa = PBXBuildFile; fileRef = CC1B690424A0521A00509C5C /* images */; };
 		CC643AE524A2DE4200336B53 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC643AE424A2DE4200336B53 /* BarChartView.swift */; };
+		CC643AE724A46E0200336B53 /* crystalWandOnSingingBowl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC643AE624A46E0200336B53 /* crystalWandOnSingingBowl.mp3 */; };
+		CC643AEA24A46E6300336B53 /* Prayer Bowls3_Shriek_2011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC643AE824A46E6300336B53 /* Prayer Bowls3_Shriek_2011.mp3 */; };
+		CC643AEB24A46E6300336B53 /* Prayer Bowls4_Shriek_2011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC643AE924A46E6300336B53 /* Prayer Bowls4_Shriek_2011.mp3 */; };
+		CC643AF124A46F2600336B53 /* TimerSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC643AF024A46F2600336B53 /* TimerSound.swift */; };
 		CC70E7CA24A280380021245D /* HistoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC70E7C924A280380021245D /* HistoryTabView.swift */; };
 		CC78E7FD249AE1D100EAE1B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */; };
 		CC78E7FF249AE1D100EAE1B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */; };
@@ -19,13 +23,16 @@
 		CC78E813249AE28300EAE1B3 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E812249AE28300EAE1B3 /* TimerManager.swift */; };
 		CC78E817249C223300EAE1B3 /* MeditationTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */; };
 		CC78E81B249D86A200EAE1B3 /* PlaySounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */; };
-		CC78E81F249F03CE00EAE1B3 /* future-gongsound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = CC78E81E249F03CE00EAE1B3 /* future-gongsound1.wav */; };
 		CC78E821249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC78E820249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC1B690424A0521A00509C5C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		CC643AE424A2DE4200336B53 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		CC643AE624A46E0200336B53 /* crystalWandOnSingingBowl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crystalWandOnSingingBowl.mp3; sourceTree = "<group>"; };
+		CC643AE824A46E6300336B53 /* Prayer Bowls3_Shriek_2011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Prayer Bowls3_Shriek_2011.mp3"; sourceTree = "<group>"; };
+		CC643AE924A46E6300336B53 /* Prayer Bowls4_Shriek_2011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Prayer Bowls4_Shriek_2011.mp3"; sourceTree = "<group>"; };
+		CC643AF024A46F2600336B53 /* TimerSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSound.swift; sourceTree = SOURCE_ROOT; };
 		CC70E7C924A280380021245D /* HistoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabView.swift; sourceTree = "<group>"; };
 		CC78E7F9249AE1D100EAE1B3 /* Meditation Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meditation Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +45,6 @@
 		CC78E812249AE28300EAE1B3 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		CC78E816249C223300EAE1B3 /* MeditationTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationTimerView.swift; sourceTree = "<group>"; };
 		CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySounds.swift; sourceTree = "<group>"; };
-		CC78E81E249F03CE00EAE1B3 /* future-gongsound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "future-gongsound1.wav"; sourceTree = "<group>"; };
 		CC78E820249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LowBowlPadBeatMidVel4.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,9 +78,12 @@
 		CC78E7FB249AE1D100EAE1B3 /* Meditation Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				CC643AF024A46F2600336B53 /* TimerSound.swift */,
 				CC1B690424A0521A00509C5C /* images */,
 				CC78E820249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 */,
-				CC78E81E249F03CE00EAE1B3 /* future-gongsound1.wav */,
+				CC643AE624A46E0200336B53 /* crystalWandOnSingingBowl.mp3 */,
+				CC643AE824A46E6300336B53 /* Prayer Bowls3_Shriek_2011.mp3 */,
+				CC643AE924A46E6300336B53 /* Prayer Bowls4_Shriek_2011.mp3 */,
 				CC78E81A249D86A200EAE1B3 /* PlaySounds.swift */,
 				CC78E7FC249AE1D100EAE1B3 /* AppDelegate.swift */,
 				CC78E7FE249AE1D100EAE1B3 /* SceneDelegate.swift */,
@@ -158,11 +167,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1B690524A0521A00509C5C /* images in Resources */,
+				CC643AEB24A46E6300336B53 /* Prayer Bowls4_Shriek_2011.mp3 in Resources */,
 				CC78E809249AE1D600EAE1B3 /* LaunchScreen.storyboard in Resources */,
-				CC78E81F249F03CE00EAE1B3 /* future-gongsound1.wav in Resources */,
 				CC78E806249AE1D600EAE1B3 /* Preview Assets.xcassets in Resources */,
+				CC643AEA24A46E6300336B53 /* Prayer Bowls3_Shriek_2011.mp3 in Resources */,
 				CC78E821249F26D700EAE1B3 /* LowBowlPadBeatMidVel4.mp3 in Resources */,
 				CC78E803249AE1D600EAE1B3 /* Assets.xcassets in Resources */,
+				CC643AE724A46E0200336B53 /* crystalWandOnSingingBowl.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +186,7 @@
 			files = (
 				CC78E7FD249AE1D100EAE1B3 /* AppDelegate.swift in Sources */,
 				CC78E81B249D86A200EAE1B3 /* PlaySounds.swift in Sources */,
+				CC643AF124A46F2600336B53 /* TimerSound.swift in Sources */,
 				CC70E7CA24A280380021245D /* HistoryTabView.swift in Sources */,
 				CC78E817249C223300EAE1B3 /* MeditationTimerView.swift in Sources */,
 				CC643AE524A2DE4200336B53 /* BarChartView.swift in Sources */,

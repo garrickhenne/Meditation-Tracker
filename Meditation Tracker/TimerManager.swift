@@ -14,15 +14,16 @@ class TimerManager: ObservableObject {
     
     @Published var totalMeditationTime: Int = 0
     
+    
     var timer = Timer()
     
-    func fireTimer() {
+    func fireTimer(withSound selectedSound: String) {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
                 self.totalMeditationTime += 1
             } else {
-                playSound(sound: "future-gongsound1", type: "wav")
+                playSound(sound: selectedSound)
                 self.reset()
             }
         }
