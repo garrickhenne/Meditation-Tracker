@@ -80,8 +80,6 @@ struct MeditationTimerView: View {
                     HStack {
                         Button(action: {
                             self.timerManager.setMeditationTime(from: 5*60)
-                            // Sound here was for testing
-                            playSound(sound: self.selectedSound)
                         }) {
                             TimerButton(label: "5 Minutes")
                         }
@@ -186,6 +184,8 @@ struct TimerButton: View {
     
     var body: some View {
         Text(label)
+            .font(.system(size: 20))
+            .fontWeight(.bold)
             .padding(20)
             .foregroundColor(Color(#colorLiteral(red: 0.1593825817, green: 0.1971980333, blue: 0.253005743, alpha: 1)))
             .background(Color(#colorLiteral(red: 0.9325308204, green: 0.423905015, blue: 0.3029931784, alpha: 1)))
