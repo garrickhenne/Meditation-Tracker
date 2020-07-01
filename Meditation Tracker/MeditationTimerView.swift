@@ -16,7 +16,7 @@ struct MeditationTimerView: View {
     
     @State var settingsInView: Bool = false
     
-    @State var selectedSound: String = "LowBowlPadBeatMidVel4"
+    @State var selectedSound: String = UserDefaults.standard.string(forKey: "finishedSound") ?? "LowBowlPadBeatMidVel4"
     
     // MARK: Play/Pause Size constants
     private let pausePlayButtonSize: CGFloat = 80
@@ -80,6 +80,7 @@ struct MeditationTimerView: View {
                     HStack {
                         Button(action: {
                             self.timerManager.setMeditationTime(from: 5*60)
+                            playSound(sound: self.selectedSound)
                         }) {
                             TimerButton(label: "5 Minutes")
                         }
@@ -166,6 +167,10 @@ struct SheetView: View {
                 }
             }
             .navigationBarTitle("").navigationBarHidden(true)
+        }
+        .onDisappear {
+            print("Changing sound...")
+            UserDefaults.standard.set(self.soundToChange, forKey: "finishedSound")
         }
     }
 }
