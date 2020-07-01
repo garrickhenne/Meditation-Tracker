@@ -153,9 +153,11 @@ struct SheetView: View {
                     EmptyView().padding()
                     // TODO: Add form with picker inside.
                     Form {
-                        Picker("Sounds" ,selection: self.$soundToChange) {
-                            ForEach(sounds, id: \.fileName) { sound in
-                                Text(sound.easyName)
+                        GeometryReader { geometry in
+                            Picker(selection: self.$soundToChange, label: PickerLabel(width: geometry.size.width, height: geometry.size.height)) {
+                                ForEach(self.sounds, id: \.fileName) { sound in
+                                    Text(sound.easyName)
+                                }
                             }
                         }
                     }
@@ -169,9 +171,17 @@ struct SheetView: View {
             .navigationBarTitle("").navigationBarHidden(true)
         }
         .onDisappear {
-            print("Changing sound...")
             UserDefaults.standard.set(self.soundToChange, forKey: "finishedSound")
         }
+    }
+}
+
+struct PickerLabel: View {
+    var width: CGFloat
+    var height: CGFloat
+    
+    var body: some View {
+        Text("Sounds")
     }
 }
 
