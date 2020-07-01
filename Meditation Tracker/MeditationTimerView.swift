@@ -149,15 +149,12 @@ struct SheetView: View {
                         Spacer()
                         Button(action: { self.settingsInView = false }, label: { Text("Cancel").bold().foregroundColor(Color(#colorLiteral(red: 0.9546920657, green: 0.5094110966, blue: 0.3724370599, alpha: 1))).padding([.top, .trailing]) })
                     }
-                    Divider().background(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1))).padding(.bottom)
-                    EmptyView().padding()
+                    Divider().background(Color(#colorLiteral(red: 0.8784313725, green: 0.9843137255, blue: 0.9882352941, alpha: 1)))
                     // TODO: Add form with picker inside.
                     Form {
-                        GeometryReader { geometry in
-                            Picker(selection: self.$soundToChange, label: PickerLabel(width: geometry.size.width, height: geometry.size.height)) {
-                                ForEach(self.sounds, id: \.fileName) { sound in
-                                    Text(sound.easyName)
-                                }
+                        Picker(selection: self.$soundToChange, label: PickerLabel()) {
+                            ForEach(self.sounds, id: \.fileName) { sound in
+                                Text(sound.easyName)
                             }
                         }
                     }
@@ -177,8 +174,6 @@ struct SheetView: View {
 }
 
 struct PickerLabel: View {
-    var width: CGFloat
-    var height: CGFloat
     
     var body: some View {
         Text("Sounds")
